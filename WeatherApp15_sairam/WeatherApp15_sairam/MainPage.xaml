@@ -1,0 +1,213 @@
+﻿<phone:PhoneApplicationPage
+    x:Class="WeatherApp15_sairam.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+     xmlns:c4fToolkit="clr-namespace:Coding4Fun.Toolkit.Controls;assembly=Coding4Fun.Toolkit.Controls"
+   xmlns:UI="clr-namespace:Microsoft.Advertising.Mobile.UI;assembly=Microsoft.Advertising.Mobile.UI"
+ 
+    mc:Ignorable="d"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait" Orientation="Portrait"
+    shell:SystemTray.IsVisible="False" DataContext="{Binding Main, Mode=OneWay, Source={StaticResource Locator}}">
+    <phone:PhoneApplicationPage.ApplicationBar>
+        <shell:ApplicationBar IsVisible="True" IsMenuEnabled="True" Mode="Minimized">
+            <shell:ApplicationBar.MenuItems>
+                <shell:ApplicationBarMenuItem IsEnabled="True" Text="Pick Color" Click="pick"/>
+                <shell:ApplicationBarMenuItem IsEnabled="True" Text="switch to background" Click="background"/>
+                <shell:ApplicationBarMenuItem IsEnabled="True" Text="Settings" Click="navigatetoSettings"/>
+            </shell:ApplicationBar.MenuItems>
+            <shell:ApplicationBarIconButton IconUri="/Assets/Icons/feature.search.png" IsEnabled="True" Text="Search" Click="navigateSearch"/>
+            <shell:ApplicationBarIconButton x:Name="pinclick1" IconUri="/Assets/Icons/pin.png" IsEnabled="True" Text="pin" Click="pinclick"/>
+            <shell:ApplicationBarIconButton IconUri="/Assets/AppBar/like.png" IsEnabled="True" Text="Review" Click="Review"/>
+        </shell:ApplicationBar>
+    </phone:PhoneApplicationPage.ApplicationBar>
+    <shell:SystemTray.ProgressIndicator>
+        <shell:ProgressIndicator IsIndeterminate="{Binding IsBusy}" 
+                                 IsVisible="{Binding IsBusy}" 
+                                 Text="{Binding M}" />
+    </shell:SystemTray.ProgressIndicator>
+
+
+    <!--LayoutRoot is the root grid where all page content is placed-->
+    <Grid x:Name="LayoutRoot">
+        <Grid.Background>
+            <ImageBrush Stretch="Fill" ImageSource="{Binding Background[0]}"/>
+        </Grid.Background>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="auto"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid Grid.Row="0" Grid.Column="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="auto"/>
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Row="0" Grid.Column="0" Background="#FF322F2F" Opacity="0.4">
+                <TextBlock x:Name="todayTemp"  FontWeight="Light" Grid.Row="0" Grid.Column="0" Margin="10,10,0,10" Text="{Binding Temp[0], StringFormat=\{0:F0\}°}" Style="{StaticResource PhoneTextExtraLargeStyle}" FontFamily="Microsoft JhengHei Light" FontSize="72" HorizontalAlignment="Left" />
+            </Grid>
+            <Grid Grid.Row="1" Margin="0,0,402,0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="auto"/>
+                    
+                    
+
+
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition Width="auto"/>
+                </Grid.ColumnDefinitions>
+
+                <TextBlock Text="{Binding cname[0]}" Grid.Row="0" Margin="10" HorizontalAlignment="Left"/>
+                <TextBlock Margin="10" Grid.Row="1" Text="{Binding description[0]}" HorizontalAlignment="Left"/>
+
+            </Grid>
+
+            <Grid x:Name="TopGrid" Visibility="Collapsed" Grid.Row="2" Grid.Column="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="auto"/>
+
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition Width="auto"/>
+                </Grid.ColumnDefinitions>
+                <TextBlock Opacity="0.6" Text="Min" Grid.Row="0" Grid.Column="0" Margin="10"/>
+                <TextBlock Text="{Binding Mintemp[0], StringFormat=\{0:F\}°}" Grid.Row="0" Grid.Column="1" Margin="10"/>
+
+                <TextBlock Opacity="0.6" Text="Max" Grid.Row="1" Grid.Column="0" Margin="10"/>
+                <TextBlock Text="{Binding Maxtemp[0], StringFormat=\{0:F\}°}" Grid.Row="1" Grid.Column="1" Margin="10"/>
+
+                <TextBlock Opacity="0.6" Text="Humidity" Grid.Row="0" Grid.Column="2" Margin="10"/>
+                <TextBlock Grid.Row="0" Grid.Column="3" Margin="10" Text="{Binding Humid[0], StringFormat=\{0:F0\} %}"/>
+
+                <TextBlock Opacity="0.6" Text="Pressure" Grid.Row="1" Grid.Column="2" Margin="10"/>
+                <TextBlock Text="{Binding Pressure[0]}" Grid.Row="1" Grid.Column="3" Margin="10"/>
+
+                <TextBlock Opacity="0.6" Text="Wind" Grid.Row="1" Grid.Column="4" Margin="10"/>
+                <TextBlock x:Name="wind" Text="{Binding Wind[0], StringFormat=\{0:F\} }" Grid.Row="1" Grid.Column="5" Margin="10"/>
+
+
+            </Grid>
+            <Image HorizontalAlignment="Left" Height="100" Width="100" Margin="378,9,0,0" Grid.Row="1" VerticalAlignment="Top" Source="{Binding Iconpath[0]}" Opacity="0.7"/>
+        </Grid>
+        <Grid Grid.Row="1" Grid.Column="0" Margin="0,0,0,10" Width="Auto">
+
+            <ListBox x:Name="lbDay" Grid.Row="0" ItemsSource="{Binding Daylist}" ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollBarVisibility="Disabled" SelectedItem="{Binding CurrentDay, Mode=TwoWay}" Width="500" Visibility="Visible" HorizontalAlignment="Left" >
+                <ListBox.Resources>
+                    <DataTemplate x:Key="DataTemplate1">
+                        <Grid>
+                            <TextBlock Margin="10" Text="{Binding Time.DayOfWeek, Mode=OneWay}" FontFamily="Shruti" FontSize="22"/>
+                        </Grid>
+                    </DataTemplate>
+                    <ItemsPanelTemplate x:Key="ItemsPanelTemplate1">
+                        <StackPanel Orientation="Horizontal" Background="#FF494848" Width="auto" Opacity="0.7">
+
+                        </StackPanel>
+                    </ItemsPanelTemplate>
+                </ListBox.Resources>
+                <ListBox.ItemsPanel>
+                    <StaticResource ResourceKey="ItemsPanelTemplate1"/>
+                </ListBox.ItemsPanel>
+                <ListBox.ItemTemplate>
+                    <StaticResource ResourceKey="DataTemplate1"/>
+                </ListBox.ItemTemplate>
+
+            </ListBox>
+        </Grid>
+
+        <Grid Grid.Row="2" Grid.Column="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+            </Grid.RowDefinitions>
+
+            <Grid Grid.Row="1" Grid.Column="0" DataContext="{Binding CurrentDay}">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+
+
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="auto"/>
+
+
+
+                </Grid.ColumnDefinitions>
+
+                <Grid x:Name="nexttempgrid" Visibility="Collapsed" Grid.Row="1" Grid.Column="0" Background="#FF322F2F" Opacity="0.4" Margin="0,0,-527,0">
+                    <TextBlock x:Name="nextTemp" FontWeight="Light" Margin="10,11,10,10" Style="{StaticResource PanoramaItemHeaderTextStyle}" FontFamily="Microsoft YaHei" FontSize="72" HorizontalAlignment="Left" Text="{Binding temp.day, StringFormat=\{0:F1\}°}" TextInputUpdate="updated"/>
+
+                </Grid>
+                <TextBlock x:Name="tbDescription" Grid.Row="2" Grid.Column="0" Margin="10" Text="{Binding weather[0].description}" HorizontalAlignment="Left"/>
+                <Grid x:Name="BotGrid" Grid.Row="3" Grid.Column="0" HorizontalAlignment="Right" Visibility="Collapsed">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="auto"/>
+                        <ColumnDefinition Width="auto"/>
+                        <ColumnDefinition Width="auto"/>
+                        <ColumnDefinition Width="auto"/>
+                        <ColumnDefinition Width="auto"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Opacity="0.6" Text="Max" Grid.Row="0" Grid.Column="0" Margin="10"/>
+                    <TextBlock Text="{Binding temp.max, StringFormat=\{0:F\}°}" Grid.Row="0" Grid.Column="1" Margin="10"/>
+
+                    <TextBlock Opacity="0.6" Text="Humidity"  Grid.Row="1" Grid.Column="2" Margin="10"/>
+                    <TextBlock Text="{Binding humidity , StringFormat=\{0:F0\} %}" Grid.Row="1" Grid.Column="3" Margin="10"/>
+
+                    <TextBlock Opacity="0.6" Text="Pressure" Grid.Row="0" Grid.Column="2" Margin="10"/>
+                    <TextBlock Text="{Binding pressure}" Grid.Row="0" Grid.Column="3" Margin="10"/>
+
+                    <TextBlock Opacity="0.6" Text="Wind" Grid.Row="1" Grid.Column="0" Margin="10"/>
+                    <TextBlock x:Name="wind2" Grid.Row="1" Grid.Column="1" Margin="10" Text="{Binding speed, StringFormat=\{0:F\}}"/>
+
+                </Grid>
+
+
+
+            </Grid>
+            <c4fToolkit:ColorPicker  x:Name="cpick"  Grid.Row="1" ColorChanged="changed" Height="200" Width="200" Margin="273,113,141,-56"  Visibility="Collapsed"/>
+            <Button x:Name="bok" Margin="167,285,341,-28" Click="doneColoring" Grid.Row="1" Content="ok" Visibility="Collapsed" >
+
+            </Button>
+
+            <ProgressBar x:Name="load" IsIndeterminate="{Binding IsBusy}" IsEnabled="{Binding IsBusy}" Margin="-62,390,62,-230" Visibility="{Binding IsBusy}" IsEnabledChanged="loadchanged" Grid.Row="1" Foreground="{StaticResource PhoneAccentBrush}"/>
+
+
+        </Grid>
+        <Image x:Name="image2ndhalf"  HorizontalAlignment="Left" Height="100" Width="100" Margin="380,156,0,0" Grid.Row="1" VerticalAlignment="Top" Opacity="0.7" Visibility="Collapsed" />
+        <UI:AdControl ApplicationId="da191666-db99-4bcc-8c31-ad89d930f76c" AdUnitId="201298" Height="50" Margin="0,0,134,-220" Grid.Row="1" IsAutoCollapseEnabled="True" IsAutoRefreshEnabled="True" IsBackgroundTransparent="True" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="300" Grid.RowSpan="2" Opacity="0.2"/>
+        <UI:AdControl ApplicationId="da191666-db99-4bcc-8c31-ad89d930f76c" AdUnitId="202506" Height="50" Margin="0,0,304,-329" Grid.Row="1" IsAutoCollapseEnabled="True" IsAutoRefreshEnabled="True" IsBackgroundTransparent="True" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="300" Grid.RowSpan="2" Opacity="0.05"/>
+
+    </Grid>
+</phone:PhoneApplicationPage>

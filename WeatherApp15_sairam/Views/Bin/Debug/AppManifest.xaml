@@ -1,0 +1,14 @@
+﻿<Deployment xmlns="http://schemas.microsoft.com/client/2007/deployment" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" EntryPointAssembly="Views" EntryPointType="Views.App" RuntimeVersion="4.7.50308.0">
+  <Deployment.Parts>
+    <AssemblyPart x:Name="Views" Source="Views.dll" />
+    <AssemblyPart x:Name="WeatherApp15_sairam" Source="WeatherApp15_sairam.dll" />
+    <AssemblyPart x:Name="GalaSoft.MvvmLight" Source="GalaSoft.MvvmLight.dll" />
+    <AssemblyPart x:Name="Coding4Fun.Toolkit.Controls" Source="Coding4Fun.Toolkit.Controls.dll" />
+    <AssemblyPart x:Name="Microsoft.Phone.Controls.Toolkit" Source="Microsoft.Phone.Controls.Toolkit.dll" />
+    <AssemblyPart x:Name="ModelClassLibrary" Source="ModelClassLibrary.dll" />
+    <AssemblyPart x:Name="Newtonsoft.Json" Source="Newtonsoft.Json.dll" />
+    <AssemblyPart x:Name="Microsoft.Practices.ServiceLocation" Source="Microsoft.Practices.ServiceLocation.dll" />
+    <AssemblyPart x:Name="GalaSoft.MvvmLight.Extras" Source="GalaSoft.MvvmLight.Extras.dll" />
+    <AssemblyPart x:Name="Coding4Fun.Toolkit" Source="Coding4Fun.Toolkit.dll" />
+  </Deployment.Parts>
+</Deployment>

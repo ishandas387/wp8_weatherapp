@@ -1,0 +1,16 @@
+D:\Users\ishan\documents\visual studio 2013\Projects\WeatherApp15_sairam\MidSizelibreferncetomain\bin\Debug\MidSizelibreferncetomain.dll
+D:\Users\ishan\documents\visual studio 2013\Projects\WeatherApp15_sairam\MidSizelibreferncetomain\bin\Debug\MidSizelibreferncetomain.pdb
+D:\Users\ishan\documents\visual studio 2013\Projects\WeatherApp15_sairam\MidSizelibreferncetomain\bin\Debug\MidSizelibreferncetomain.pri
+D:\Users\ishan\documents\visual studio 2013\Projects\WeatherApp15_sairam\MidSizelibreferncetomain\obj\Debug\MidSizelibreferncetomain.dll
+D:\Users\ishan\documents\visual studio 2013\Projects\WeatherApp15_sairam\MidSizelibreferncetomain\obj\Debug\MidSizelibreferncetomain.pdb
+D:\Users\ishan\documents\visual studio 2013\Projects\WeatherApp15_sairam\MidSizelibreferncetomain\obj\Debug\priconfig.xml
+D:\Users\ishan\documents\visual studio 2013\Projects\WeatherApp15_sairam\MidSizelibreferncetomain\obj\Debug\priconfig.xml.intermediate
+D:\Users\ishan\documents\visual studio 2013\Projects\WeatherApp15_sairam\MidSizelibreferncetomain\obj\Debug\layout.resfiles
+D:\Users\ishan\documents\visual studio 2013\Projects\WeatherApp15_sairam\MidSizelibreferncetomain\obj\Debug\layout.resfiles.intermediate
+D:\Users\ishan\documents\visual studio 2013\Projects\WeatherApp15_sairam\MidSizelibreferncetomain\obj\Debug\resources.resfiles
+D:\Users\ishan\documents\visual studio 2013\Projects\WeatherApp15_sairam\MidSizelibreferncetomain\obj\Debug\resources.resfiles.intermediate
+D:\Users\ishan\documents\visual studio 2013\Projects\WeatherApp15_sairam\MidSizelibreferncetomain\obj\Debug\pri.resfiles
+D:\Users\ishan\documents\visual studio 2013\Projects\WeatherApp15_sairam\MidSizelibreferncetomain\obj\Debug\pri.resfiles.intermediate
+D:\Users\ishan\documents\visual studio 2013\Projects\WeatherApp15_sairam\MidSizelibreferncetomain\obj\Debug\qualifiers.txt
+D:\Users\ishan\documents\visual studio 2013\Projects\WeatherApp15_sairam\MidSizelibreferncetomain\obj\Debug\qualifiers.txt.intermediate
+D:\Users\ishan\documents\visual studio 2013\Projects\WeatherApp15_sairam\MidSizelibreferncetomain\obj\Debug\MultipleQualifiersPerDimensionFound.txt

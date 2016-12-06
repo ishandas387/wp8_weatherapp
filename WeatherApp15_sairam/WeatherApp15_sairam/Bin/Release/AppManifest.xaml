@@ -1,0 +1,25 @@
+﻿<Deployment xmlns="http://schemas.microsoft.com/client/2007/deployment" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" EntryPointAssembly="WeatherApp15_sairam" EntryPointType="WeatherApp15_sairam.App" RuntimeVersion="4.7.50308.0">
+  <Deployment.Parts>
+    <AssemblyPart x:Name="WeatherApp15_sairam" Source="WeatherApp15_sairam.dll" />
+    <AssemblyPart x:Name="Cimbalino.Phone.Toolkit.Background" Source="Cimbalino.Phone.Toolkit.Background.dll" />
+    <AssemblyPart x:Name="Coding4Fun.Toolkit.Controls" Source="Coding4Fun.Toolkit.Controls.dll" />
+    <AssemblyPart x:Name="Coding4Fun.Toolkit" Source="Coding4Fun.Toolkit.dll" />
+    <AssemblyPart x:Name="GalaSoft.MvvmLight" Source="GalaSoft.MvvmLight.dll" />
+    <AssemblyPart x:Name="GalaSoft.MvvmLight.Extras" Source="GalaSoft.MvvmLight.Extras.dll" />
+    <AssemblyPart x:Name="GalaSoft.MvvmLight.Platform" Source="GalaSoft.MvvmLight.Platform.dll" />
+    <AssemblyPart x:Name="Largetileback" Source="Largetileback.dll" />
+    <AssemblyPart x:Name="LargeTilelibrary" Source="LargeTilelibrary.dll" />
+    <AssemblyPart x:Name="Microsoft.Advertising.Mobile.Common" Source="Microsoft.Advertising.Mobile.Common.dll" />
+    <AssemblyPart x:Name="Microsoft.Advertising.Mobile" Source="Microsoft.Advertising.Mobile.dll" />
+    <AssemblyPart x:Name="Microsoft.Advertising.Mobile.UI" Source="Microsoft.Advertising.Mobile.UI.dll" />
+    <AssemblyPart x:Name="Microsoft.Phone.Controls.Toolkit" Source="Microsoft.Phone.Controls.Toolkit.dll" />
+    <AssemblyPart x:Name="Microsoft.Practices.ServiceLocation" Source="Microsoft.Practices.ServiceLocation.dll" />
+    <AssemblyPart x:Name="Midsizeback" Source="Midsizeback.dll" />
+    <AssemblyPart x:Name="MidSizeTileLibrary" Source="MidSizeTileLibrary.dll" />
+    <AssemblyPart x:Name="ModelClassLibrary" Source="ModelClassLibrary.dll" />
+    <AssemblyPart x:Name="Newtonsoft.Json" Source="Newtonsoft.Json.dll" />
+    <AssemblyPart x:Name="ScheduledTaskAgent1" Source="ScheduledTaskAgent1.dll" />
+    <AssemblyPart x:Name="System.Windows.Interactivity" Source="System.Windows.Interactivity.dll" />
+    <AssemblyPart x:Name="Microsoft.Phone.Controls.Maps" Source="Microsoft.Phone.Controls.Maps.dll" />
+  </Deployment.Parts>
+</Deployment>
